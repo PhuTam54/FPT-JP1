@@ -21,8 +21,14 @@ public class Assignment1 {
         System.out.println(m + " Fibonacci: " + checkFibonacci(m - 1));
 
 //    3. Nhập 2 số nguyên, tìm ước chung lớn nhất và bội chung nhỏ nhất của 2 số đó.
-        //
-
+        System.out.println("-------------------------");
+        System.out.println("Enter 2 integers to check their greatest common divisor and least common multiple: ");
+        System.out.println("Enter first number: ");
+        int x = sc.nextInt() ;
+        System.out.println("Enter second number: ");
+        int y = sc.nextInt();
+        System.out.println("Least common divisor: " + checkLeastDivisor(x, y));
+        System.out.println("Greatest common multiple: " + checkGreatestMuliple(x, y));
     }
 
 //    1.
@@ -54,6 +60,12 @@ public class Assignment1 {
     }
 
 //    3.
-    //
+    public static int checkGreatestMuliple(int x, int y) {
+            if (y == 0) return x;
+            return checkGreatestMuliple(y, x % y);
+    }
+    public static int checkLeastDivisor(int x, int y) {
+        return (x * y) / checkGreatestMuliple(x, y);
+    }
 
 }
