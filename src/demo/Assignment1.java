@@ -50,19 +50,37 @@ public class Assignment1 {
 
 //    2.
     public static int checkFibonacci(int m) {
+        int f0 = 0;
+        int f1 = 1;
+        int fn = 1;
+
         if (m < 0) {
             return -1;
         } else if (m == 0 || m == 1) {
             return m;
         } else {
-            return checkFibonacci(m - 1) + checkFibonacci(m - 2);
+            for (int i = 2; i < m; i++) {
+                f0 = f1;
+                f1 = fn;
+                fn = f0 + f1;
+            }
         }
+        return fn;
     }
 
 //    3.
     public static int checkGreatestMuliple(int x, int y) {
-            if (y == 0) return x;
-            return checkGreatestMuliple(y, x % y);
+        int a = x;
+        int b = y;
+        while (a != b) {
+            if (a > b) {
+                a -= b;
+            } else {
+                b -= a;
+            }
+        }
+        int gm = a;
+        return gm;
     }
     public static int checkLeastDivisor(int x, int y) {
         return (x * y) / checkGreatestMuliple(x, y);
