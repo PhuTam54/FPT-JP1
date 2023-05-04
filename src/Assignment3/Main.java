@@ -32,7 +32,10 @@ public class Main {
         c.city = "BN";
 
         // Tính tổng số tiền
-        System.out.println("Total 1: " + c.getTotal(c));
-        System.out.println("Total 2: " + c2.getTotal(c2));
+        System.out.println("-----------------\nTotal in BN: " + c.getTotal(c));
+        System.out.println("Total HCM: " + c2.getTotal(c2));
+
+        // Thêm sản phẩm vào giỏ hàng
+        c.addToCart(c, p1);
     }
 }

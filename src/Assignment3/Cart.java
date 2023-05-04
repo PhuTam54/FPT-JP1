@@ -31,14 +31,35 @@ public class Cart {
         return grandTotal;
     }
 
-    public static Object[] addToCart(Object[] productList, Object...elements) {
-        Object[] tempList = new Object[productList.length + elements.length];
-        System.arraycopy(productList, 0, tempList, 0, productList.length);
+    public void addToCart(Cart cart, Product product) {
+        // Tạo mảng
+        String[] arr = {};
 
-        for (int i = 0; i < elements.length; i++)
-            tempList[productList.length + i] = elements[i];
-        return tempList;
+        // In mảng ban đầu
+        System.out.println("-----------------\nOld arr:\n"
+                + Arrays.toString(arr));
+
+        // Lấy độ dài mảng ban đầu
+        int N = arr.length;
+
+        /*Tạo một mảng mới cùng tên có độ dài N+1 và copy mảng ban đầu */
+        arr = Arrays.copyOf(arr, N + 1);
+
+        //Thêm 1 phần tử vào mảng mới
+        arr[N] = product.productName;
+
+        // In mảng kết quả
+        System.out.println("New arr:\n" + Arrays.toString(arr));
     }
+
+//    public static Object[] addToCart(Object[] productList, Object...elements) {
+//        Object[] tempList = new Object[productList.length + elements.length];
+//        System.arraycopy(productList, 0, tempList, 0, productList.length);
+//
+//        for (int i = 0; i < elements.length; i++)
+//            tempList[productList.length + i] = elements[i];
+//        return tempList;
+//    }
 }
 
 
