@@ -23,9 +23,9 @@ public class Cart {
     }
 
     public float getTotal(Cart cart) {
-        if (cart.city == "HN") {
+        if (cart.city == "HN" || cart.city == "HCM") {
             cart.grandTotal = cart.grandTotal + (cart.grandTotal * 1/100);
-        } else if (cart.city == "HCM") {
+        } else{
             cart.grandTotal = cart.grandTotal + (cart.grandTotal * 2/100);
         }
         return grandTotal;
@@ -39,27 +39,6 @@ public class Cart {
             tempList[productList.length + i] = elements[i];
         return tempList;
     }
-
-//    public void addToCart() {
-//        // Tạo mảng
-//        String[] arr = {"1", "2" , "3", "4", "5"};
-//
-//        // In mảng ban đầu
-//        System.out.println("Old arr:\n"
-//                + Arrays.toString(arr));
-//
-//        // Lấy độ dài mảng ban đầu
-//        int N = arr.length;
-//
-//        /*Tạo một mảng mới cùng tên có độ dài N+1 và copy mảng ban đầu */
-//        arr = Arrays.copyOf(arr, N + 1);
-//
-//        //Thêm 1 phần tử vào mảng mới
-//        arr[N] = "6";
-//
-//        // In mảng kết quả
-//        System.out.println("New arr:\n" + Arrays.toString(arr));
-//    }
 }
 
 

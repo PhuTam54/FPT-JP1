@@ -23,16 +23,16 @@ public class Main {
         };
 
         // Test Cart
-        Cart cart = new Cart(1, "PhuTam", 99, null, "HCM");
+        Cart c2 = new Cart(1, "PhuTam", 99, null, "HCM");
         Cart c = new Cart();
         c.id = 2;
         c.customer= "PT";
         c.grandTotal = 99;
         c.productList = null;
-        c.city = "HN";
+        c.city = "BN";
 
         // Tính tổng số tiền
         System.out.println("Total 1: " + c.getTotal(c));
-        System.out.println("Total 2: " + cart.getTotal(cart));
+        System.out.println("Total 2: " + c2.getTotal(c2));
     }
 }
