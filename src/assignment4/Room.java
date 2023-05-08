@@ -59,7 +59,7 @@ public class Room {
         String address = sc.nextLine();
 
         Person s = new Person(name, age, telephone, address);
-        list.add(s);
+//        list.add(s);
     }
 
     // xóa 1 người khỏi danh sách
