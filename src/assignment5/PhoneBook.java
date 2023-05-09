@@ -1,0 +1,52 @@
+package assignment5;
+
+import Practice.Student;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PhoneBook extends Phone{
+    ArrayList<PhoneNumber> phoneList;
+
+    @Override
+    void insertPhone(String name, String phone) {
+        PhoneNumber s = new PhoneNumber(name, phone);
+        for (int i = 0; i < phoneList.size(); i ++) {
+            if (phoneList.equals(name)) {
+                if (!phoneList.equals(phone)) {
+                    s.phone = phone;
+                }
+            } else {
+                phoneList.add(s);
+            }
+        }
+    }
+    @Override
+    void removePhone(String name) {
+        for (int i = 0; i < phoneList.size(); i ++) {
+            if (phoneList.equals(name)) {
+                phoneList.remove(this.phoneList);
+            }
+        }
+    }
+
+    @Override
+    void updatePhone(String name, String newPhone) {
+        for (int i = 0; i < phoneList.size(); i ++) {
+            if (phoneList.equals(name)) {
+//                searchPhone().phone = newPhone;
+            }
+        }
+    }
+
+    @Override
+    PhoneNumber searchPhone(String name) {
+        return null;
+    }
+
+    @Override
+    void sort() {
+
+    }
+
+}
