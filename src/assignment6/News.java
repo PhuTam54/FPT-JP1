@@ -81,14 +81,20 @@ public class News implements INews{
 
     public void calculate(ArrayList<Float> rateList) {
         float averageRateNew = 0;
-        for (int i = 0; i < rateList.size(); i ++) {
+        int listSize = rateList.size();
+        if (listSize == 0) {
+            return;
+        }
+        for (int i = 0; i < listSize; i ++) {
             averageRateNew += rateList.get(i);
         }
         this.averageRate = averageRateNew / rateList.size();
     }
 
     public void inputRate(float rate) {
-        this.rateList.add(rate);
-        calculate(this.getRateList());
+        if (rate >= 1 && rate <= 5) {
+            this.rateList.add(rate);
+            calculate(this.getRateList());
+        }
     }
 }

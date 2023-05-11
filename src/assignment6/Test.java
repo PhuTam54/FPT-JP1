@@ -10,8 +10,10 @@ public class Test {
         // test display
         n1.display();
 
+        // test rate list
         ArrayList<Float> l1 = new ArrayList<>(5);
         n1.setRateList();
-        System.out.println(n1.rateList);
+        n1.calculate(l1);
+        n1.inputRate(5);
     }
 }
