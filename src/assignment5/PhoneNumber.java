@@ -1,12 +1,15 @@
 package assignment5;
 
+import java.util.ArrayList;
+
 public class PhoneNumber {
     String name;
-    String phone;
+    ArrayList<String> phone;
 
     public PhoneNumber(String name, String phone) {
         this.name = name;
-        this.phone = phone;
+        this.phone = new ArrayList<>();
+        this.phone.add(phone);
     }
 
     public String getName() {
@@ -17,11 +20,8 @@ public class PhoneNumber {
         this.name = name;
     }
 
-    public String getPhone() {
+    public ArrayList<String> getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 }
