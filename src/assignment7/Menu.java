@@ -2,7 +2,7 @@ package assignment7;
 
 import java.util.Scanner;
 
-public class Test {
+public class Menu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StudentList studentList = new StudentList();
@@ -39,11 +39,20 @@ public class Test {
                 case 2: //2. Edit student by id.
 
                     break;
-                case 3:
+                case 3: //3. Delete student by id.
+                    studentList.showStudent();
+                    System.out.println("Enter the id of the student that you want to remove: ");
+                    String studentRemoveId = sc.nextLine();
+                    Student studentRemove = new Student(studentRemoveId);
+                    System.out.println("Student removed: " + studentList.removeStudent(studentRemove));
                     break;
-                case 4:
+                case 4: //4. Sort student by gpa.
+                    studentList.sortStudentByGPA();
+                    System.out.println("Sort student by gpa successfully!\n");
                     break;
-                case 5:
+                case 5: //5. Sort student by name.
+                    studentList.sortStudentByName();
+                    System.out.println("Sort student by name successfully!\n");
                     break;
                 case 6: //6. Show student.
                     studentList.showStudent();

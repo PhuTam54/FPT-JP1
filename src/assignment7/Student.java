@@ -1,6 +1,8 @@
 package assignment7;
 
-public class Student {
+import java.util.Objects;
+
+public class Student{ // implements để so sánh student với nhau :  implements Comparable<Student>
     private String id, name, dateOfBirth, address;
     private float gpa;
 
@@ -10,6 +12,10 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
         this.address = address;
         this.gpa = gpa;
+    }
+
+    public Student(String studentRemoveId) {
+        this.id = studentRemoveId;
     }
 
     public String getId() {
@@ -62,4 +68,23 @@ public class Student {
                 ", gpa=" + gpa +
                 '}';
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(id, student.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, dateOfBirth, address, gpa);
+    }
+
+//    @Override
+//    public int compareTo(Student o) {
+//        return this.id.compareTo(o.id);
+//    }
 }

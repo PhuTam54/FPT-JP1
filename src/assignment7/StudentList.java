@@ -1,6 +1,8 @@
 package assignment7;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class StudentList {
     private ArrayList<Student> studentList;
@@ -16,6 +18,45 @@ public class StudentList {
     //1. Add student.
     public void addStudent(Student student) {
         this.studentList.add(student);
+    }
+
+    //2. Edit student by id.
+
+    //3. Delete student by id.
+    public boolean removeStudent(Student student) {
+        return this.studentList.remove(student);
+    }
+
+    //4. Sort student by gpa.
+    public void sortStudentByGPA() {
+        Collections.sort(this.studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student student1, Student student2) {
+                if (student1.getGpa() < student2.getGpa()) {
+                    return -1;
+                }else if (student1.getGpa() > student2.getGpa()) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+    }
+
+    //5. Sort student by name.
+    public void sortStudentByName() {
+        Collections.sort(this.studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student student1, Student student2) {
+                if (student1.getName().compareTo(student2.getName()) < 0) {
+                    return -1;
+                }else if (student1.getName().compareTo(student2.getName()) > 0) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
     }
 
     //6. Show student.
