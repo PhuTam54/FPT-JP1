@@ -29,15 +29,42 @@ public class Menu {
                     System.out.println("Enter student's dateOfBirth: ");
                     String dateOfBirth = sc.nextLine();
                     System.out.println("Enter student's address : ");
-                    String address  = sc.nextLine();
+                    String address = sc.nextLine();
                     System.out.println("Enter student's gpa : ");
-                    float gpa  = sc.nextFloat();
+                    float gpa = sc.nextFloat();
                     Student student = new Student(id, name, dateOfBirth, address, gpa);
                     studentList.addStudent(student);
+                    studentList.showStudent();
                     System.out.println("Add student successfully!\n");
                     break;
                 case 2: //2. Edit student by id.
-
+                    // BY INDEX
+                    studentList.showStudent();
+                    System.out.println("Enter the index of the student that you want to edit: ");
+                    int studentEditId = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Enter New student's id: ");
+                    String idNew = sc.nextLine();
+                    System.out.println("Enter New student's name: ");
+                    String nameNew = sc.nextLine();
+                    System.out.println("Enter New student's dateOfBirth: ");
+                    String dateOfBirthNew = sc.nextLine();
+                    System.out.println("Enter New student's address : ");
+                    String addressNew = sc.nextLine();
+                    System.out.println("Enter New student's gpa : ");
+                    float gpaNew = sc.nextFloat();
+                    Student studentEdit = new Student(idNew, nameNew, dateOfBirthNew, addressNew, gpaNew);
+                    studentList.editStudentById(studentEditId, studentEdit);
+                    studentList.showStudent();
+                    System.out.println("Edit student by id successfully!\n");
+//                   BY ID
+//                    if (studentList.equals(studentEditId)) {
+//                        studentEdit.getId();
+//                        studentList.editStudentById(studentEditId, studentEdit);
+//                        studentList.showStudent();
+//                    } else {
+//                        System.out.println("There is no student has id is " + studentEditId);
+//                    }
                     break;
                 case 3: //3. Delete student by id.
                     studentList.showStudent();
@@ -45,13 +72,16 @@ public class Menu {
                     String studentRemoveId = sc.nextLine();
                     Student studentRemove = new Student(studentRemoveId);
                     System.out.println("Student removed: " + studentList.removeStudent(studentRemove));
+                    studentList.showStudent();
                     break;
                 case 4: //4. Sort student by gpa.
                     studentList.sortStudentByGPA();
+                    studentList.showStudent();
                     System.out.println("Sort student by gpa successfully!\n");
                     break;
                 case 5: //5. Sort student by name.
                     studentList.sortStudentByName();
+                    studentList.showStudent();
                     System.out.println("Sort student by name successfully!\n");
                     break;
                 case 6: //6. Show student.

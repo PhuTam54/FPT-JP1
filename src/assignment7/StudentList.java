@@ -21,6 +21,9 @@ public class StudentList {
     }
 
     //2. Edit student by id.
+    public Student editStudentById(int index, Student studentEdit) {
+        return this.studentList.set(index, studentEdit);
+    }
 
     //3. Delete student by id.
     public boolean removeStudent(Student student) {

@@ -2,7 +2,7 @@ package assignment7;
 
 import java.util.Objects;
 
-public class Student{ // implements để so sánh student với nhau :  implements Comparable<Student>
+public class Student{
     private String id, name, dateOfBirth, address;
     private float gpa;
 
@@ -14,8 +14,8 @@ public class Student{ // implements để so sánh student với nhau :  impleme
         this.gpa = gpa;
     }
 
-    public Student(String studentRemoveId) {
-        this.id = studentRemoveId;
+    public Student(String studentId) {
+        this.id = studentId;
     }
 
     public String getId() {
@@ -69,7 +69,6 @@ public class Student{ // implements để so sánh student với nhau :  impleme
                 '}';
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -82,9 +81,4 @@ public class Student{ // implements để so sánh student với nhau :  impleme
     public int hashCode() {
         return Objects.hash(id, name, dateOfBirth, address, gpa);
     }
-
-//    @Override
-//    public int compareTo(Student o) {
-//        return this.id.compareTo(o.id);
-//    }
 }
