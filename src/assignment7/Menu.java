@@ -22,18 +22,24 @@ public class Menu {
             sc.nextLine();
             switch (choose) {
                 case 1: //1. Add student.
-                    System.out.println("Enter student's id: ");
-                    String id = sc.nextLine();
-                    System.out.println("Enter student's name: ");
-                    String name = sc.nextLine();
-                    System.out.println("Enter student's dateOfBirth: ");
-                    String dateOfBirth = sc.nextLine();
-                    System.out.println("Enter student's address : ");
-                    String address = sc.nextLine();
-                    System.out.println("Enter student's gpa : ");
-                    float gpa = sc.nextFloat();
-                    Student student = new Student(id, name, dateOfBirth, address, gpa);
-                    studentList.addStudent(student);
+                    System.out.println("Enter number of the student that you want to add: ");
+                    int num = sc.nextInt();
+                    for (int i = 0; i < num; i++) {
+                        sc.nextLine();
+                        System.out.println("Enter info of the student " + (i + 1));
+                        System.out.println("Enter student's id: ");
+                        String id = sc.nextLine();
+                        System.out.println("Enter student's name: ");
+                        String name = sc.nextLine();
+                        System.out.println("Enter student's dateOfBirth: ");
+                        String dateOfBirth = sc.nextLine();
+                        System.out.println("Enter student's address : ");
+                        String address = sc.nextLine();
+                        System.out.println("Enter student's gpa : ");
+                        float gpa = sc.nextFloat();
+                        Student student = new Student(id, name, dateOfBirth, address, gpa);
+                        studentList.addStudent(student);
+                    }
                     studentList.showStudent();
                     System.out.println("Add student successfully!\n");
                     break;
@@ -73,6 +79,7 @@ public class Menu {
                     Student studentRemove = new Student(studentRemoveId);
                     System.out.println("Student removed: " + studentList.removeStudent(studentRemove));
                     studentList.showStudent();
+                    System.out.println("Delete student successfully!\n");
                     break;
                 case 4: //4. Sort student by gpa.
                     studentList.sortStudentByGPA();
