@@ -2,7 +2,7 @@ package assignment7;
 
 import java.util.Objects;
 
-public class Student{
+public class Student implements Comparable<Student>{
     private String id, name, dateOfBirth, address;
     private float gpa;
 
@@ -60,8 +60,7 @@ public class Student{
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id='" + id + '\'' +
+        return "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", address='" + address + '\'' +
@@ -80,5 +79,10 @@ public class Student{
     @Override
     public int hashCode() {
         return Objects.hash(id, name, dateOfBirth, address, gpa);
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return this.id.compareTo(o.id);
     }
 }

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class StudentList {
-    private ArrayList<Student> studentList;
+    private final ArrayList<Student> studentList;
 
     public StudentList() {
         this.studentList = new ArrayList<>();
@@ -21,8 +21,13 @@ public class StudentList {
     }
 
     //2. Edit student by id.
-    public Student editStudentById(int index, Student studentEdit) {
-        return this.studentList.set(index, studentEdit);
+    public void editStudentById(String id, Student studentOld, Student studentNew) {
+        for (Student student: studentList) {
+            if (student.getId().contains(id)) {
+                studentList.remove(studentOld);
+                studentList.add(studentNew);
+            }
+        }
     }
 
     //3. Delete student by id.
@@ -65,7 +70,12 @@ public class StudentList {
     //6. Show student.
     public void showStudent() {
         for (Student student: studentList) {
-            System.out.println(student.toString());
+            System.out.println(student);
         }
+    }
+
+    // kiem tra ton tai
+    public boolean isValid(Student student) {
+        return this.studentList.contains(student);
     }
 }

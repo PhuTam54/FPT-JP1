@@ -44,33 +44,28 @@ public class Menu {
                     System.out.println("Add student successfully!\n");
                     break;
                 case 2: //2. Edit student by id.
-                    // BY INDEX
                     studentList.showStudent();
                     System.out.println("Enter the index of the student that you want to edit: ");
-                    int studentEditId = sc.nextInt();
-                    sc.nextLine();
-                    System.out.println("Enter New student's id: ");
-                    String idNew = sc.nextLine();
-                    System.out.println("Enter New student's name: ");
-                    String nameNew = sc.nextLine();
-                    System.out.println("Enter New student's dateOfBirth: ");
-                    String dateOfBirthNew = sc.nextLine();
-                    System.out.println("Enter New student's address : ");
-                    String addressNew = sc.nextLine();
-                    System.out.println("Enter New student's gpa : ");
-                    float gpaNew = sc.nextFloat();
-                    Student studentEdit = new Student(idNew, nameNew, dateOfBirthNew, addressNew, gpaNew);
-                    studentList.editStudentById(studentEditId, studentEdit);
-                    studentList.showStudent();
-                    System.out.println("Edit student by id successfully!\n");
-//                   BY ID
-//                    if (studentList.equals(studentEditId)) {
-//                        studentEdit.getId();
-//                        studentList.editStudentById(studentEditId, studentEdit);
-//                        studentList.showStudent();
-//                    } else {
-//                        System.out.println("There is no student has id is " + studentEditId);
-//                    }
+                    String studentEditId = sc.nextLine();
+                    Student studentOld = new Student(studentEditId);
+                    if (studentList.isValid(studentOld)) {
+                        System.out.println("Enter New student's id: ");
+                        String idNew = sc.nextLine();
+                        System.out.println("Enter New student's name: ");
+                        String nameNew = sc.nextLine();
+                        System.out.println("Enter New student's dateOfBirth: ");
+                        String dateOfBirthNew = sc.nextLine();
+                        System.out.println("Enter New student's address : ");
+                        String addressNew = sc.nextLine();
+                        System.out.println("Enter New student's gpa : ");
+                        float gpaNew = sc.nextFloat();
+                        Student studentNew = new Student(idNew, nameNew, dateOfBirthNew, addressNew, gpaNew);
+                        studentList.editStudentById(studentEditId, studentOld, studentNew);
+                        studentList.showStudent();
+                        System.out.println("Edit student by id successfully!\n");
+                    } else {
+                        System.out.println("There is no student has id is " + studentEditId);
+                    }
                     break;
                 case 3: //3. Delete student by id.
                     studentList.showStudent();
