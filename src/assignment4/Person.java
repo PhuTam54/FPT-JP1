@@ -1,7 +1,5 @@
 package assignment4;
 
-import Practice.Student;
-
 import java.util.List;
 import java.util.Scanner;
 
